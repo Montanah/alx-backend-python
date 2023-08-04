@@ -2,6 +2,7 @@
 """type-annotated function"""
 import Math
 
+
 def floor(n: float) -> int:
     """
     function floor which takes a float n as
