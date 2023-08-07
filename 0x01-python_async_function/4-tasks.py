@@ -12,15 +12,11 @@ task_wait_random = __import__('3-tasks').task_wait_random
 
 def task_wait_n(n: int = 0, max_delay: int = 10) -> List[float]:
     """
-    [Function that returns the list of all the delays (float values).
-    The list of the delays should be in ascending order without using
-    sort() because of concurrency.
+    [Function that returns a list of delays in ascending order].
     Args:
-        n (int, optional): [number of iterations]. Defaults to 0.
-        max_delay (int, optional): [maximun value of delay].
-            Defaults to 10.
+        max_delay (int): [maximun value of delay].
     Returns:
-        List[float]: [list of all the delays (float values)].
+        List[float]: [list of delays in ascending order].
     """
     delay_list: List[float] = []
     for _ in range(n):
