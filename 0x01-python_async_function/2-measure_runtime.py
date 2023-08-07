@@ -3,7 +3,6 @@
 """
 
 import asyncio
-import random
 import time
 
 from typing import List
@@ -11,7 +10,7 @@ from typing import List
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-def measure_time(n: int = 0, max_delay: int) -> float:
+def measure_time(n: int = 0, max_delay: int = 10) -> float:
     """
     [Function that measures the total execution time for wait_n(n, max_delay),
     and returns total_time / n. Your function should return a float.
