@@ -17,4 +17,4 @@ async def async_generator() -> Generator[float, None, None]:
 async def main() -> None:
     """ Main Function """
     async for i in async_generator():
-        print(i) # should wait for 1 second before printing another random number
+        print(i)  # should wait for 1 sec before printing another random number
