@@ -13,6 +13,7 @@ async def async_comprehension() -> List[float]:
     """ Async Comprehension """
     return [i async for i in async_generator()]
 
+
 async def main() -> None:
     """ Main Function """
     print(await async_comprehension())
