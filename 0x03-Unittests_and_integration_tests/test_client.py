@@ -50,6 +50,17 @@ class TestGithubOrgClient(unittest.TestCase):
             (mock_public_repos_url.return_value)
             mock_public_repos_url.assert_called_once()
 
+    def test_public_repos_with_license(self):
+        """ Test public_repos method with license """
+        repo = {'license': {'key': 'my_license'}}
+        with patch('client.GithubOrgClient.public_repos',
+                   new_callable=PropertyMock) as mock_public_repos:
+            mock_public_repos.return_value = [repo]
+            test_class = GithubOrgClient('test')
+            self.assertEqual(test_class.public_repos('my_license'),
+                             [repo])
+            mock_public_repos.assert_called_once()
+
     @parameterized.expand([
         ({'license': {'key': 'my_license'}}, 'my_license', True),
         ({'license': {'key': 'other_license'}}, 'my_license', False)
